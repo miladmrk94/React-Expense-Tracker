@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: aqua;
+    .boxOne {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .boxTwo {
+        display: flex;
+        justify-content: space-around;
+    }
+}
