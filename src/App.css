@@ -1,7 +1,11 @@
 .App {
   text-align: center;
-}
+  transition: all 0.5s;
 
+}
+.Transaction{
+  transition: all 0.5s;
+}
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
