@@ -1,0 +1,45 @@
+.container{
+     background-color: rgb(115, 63, 139);
+        padding: 1rem;
+        border-radius: 2rem;
+        margin: 1rem;
+    .filterBox{
+        background-color: rgb(212, 74, 173);
+        padding: 1rem;
+        border-radius: 2rem;
+        margin: 1rem;
+    }
+    .detailBox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(245, 244, 223);
+        margin: 0.4rem;
+        padding: 0.3rem;
+        border-radius: 1.5rem;
+        color: rgb(58, 58, 58);
+        h4{
+            margin-right: 1rem;
+            .expense {
+                color: red;
+            }
+            .income{
+                color: green;
+            }
+        }
+            .boxOne{
+                display: flex;
+                align-items: center;
+                text-align: center;
+                h2{
+                    margin: 1rem;
+                    background-color: rgb(37, 37, 37);
+                    width: 35px;
+                    height: 35px;
+                    padding: 15px 10px 7px 10px;
+                    border-radius: 65rem;
+                    color: wheat;
+                }
+            }
+    }
+}
