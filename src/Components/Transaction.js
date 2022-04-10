@@ -1,14 +1,32 @@
-import React from "react";
-import { useDataTracker } from "./ProviderComponent";
+import React, { useEffect, useState } from "react";
+import FilterComponent from "./FilterComponent";
+import { useDataTracker, useDataAction } from "./ProviderComponent";
 import styles from "./Transaction.module.scss";
 
 const Transaction = () => {
   const data = useDataTracker();
+  const [filterData, setFilterData] = useState(data);
+
+  const changeHandler = (e) => {
+    const eventValue = e.target.value;
+    if (!eventValue || eventValue === "") {
+      setFilterData(data);
+    } else {
+      const filter = filterData.filter((i) => {
+        return i.detail.includes(eventValue);
+      });
+      setFilterData(filter);
+    }
+  };
+
+  useEffect(() => {
+    setFilterData(data);
+  }, [data]);
   return (
     <div className={styles.container}>
-      <div className={styles.filterBox}>filters</div>
+      <FilterComponent changeHandler={changeHandler} />
       <div>
-        {data.map((item) => {
+        {filterData.map((item) => {
           return (
             <div key={item.id} className={styles.detailBox}>
               <div className={styles.boxOne}>

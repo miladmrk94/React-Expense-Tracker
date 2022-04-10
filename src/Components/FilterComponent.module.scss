@@ -1,0 +1,17 @@
+.filterBox{
+    background-color: rgb(212, 74, 173);
+    padding: 1rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    font-family: 'Lato', sans-serif;
+
+    input {
+        border-radius: 1rem;
+        border: none;
+        height: 20px;
+        margin: 0.3rem;
+        padding: 0.3rem;
+       outline: none;
+       border: solid 3px rebeccapurple;
+    }
+}

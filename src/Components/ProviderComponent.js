@@ -8,14 +8,13 @@ const ProviderComponent = ({ children }) => {
     switch (action.type) {
       case "ok":
         const formValue = action.e;
-
         return [...state, { ...formValue, id: Date.now() }];
+
       default:
-        break;
+        return state;
     }
   }, initialData);
 
-  console.log(data);
   return (
     <ProviderData.Provider value={data}>
       <ProviderDataDispatcher.Provider value={setData}>
