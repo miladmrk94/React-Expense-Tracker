@@ -33,6 +33,8 @@ const Transaction = () => {
                 <h2>{item.detail.slice(0, 1).toUpperCase()}</h2>
                 <h4>{item.detail}</h4>
               </div>
+              <p className={styles.date}>{item.time.format("l - LT")}</p>
+
               <h4
                 style={
                   item.type === "expense"

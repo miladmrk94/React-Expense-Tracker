@@ -7,7 +7,7 @@ import Transaction from "./Components/Transaction";
 function App() {
   return (
     <div className="App">
-      <h3>salam</h3>
+      <h3>Expense Tracker</h3>
       <ProviderComponent>
         <ExpenseTracker />
         <Transaction className="Transaction" />

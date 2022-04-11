@@ -1,4 +1,5 @@
 import React, { useContext, useReducer } from "react";
+import moment from "moment";
 
 const ProviderData = React.createContext();
 const ProviderDataDispatcher = React.createContext();
@@ -8,7 +9,7 @@ const ProviderComponent = ({ children }) => {
     switch (action.type) {
       case "ok":
         const formValue = action.e;
-        return [...state, { ...formValue, id: Date.now() }];
+        return [...state, { ...formValue, id: Date.now(), time: moment() }];
 
       default:
         return state;
