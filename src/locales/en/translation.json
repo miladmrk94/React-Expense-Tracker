@@ -1,0 +1,11 @@
+{
+    "name": "Expense Tracker",
+    "totalBalance": "Total Balance",
+    "$":"$",
+    "amount":"Amount...",
+    "detail":"Detail...",
+    "expense":"Expense",
+    "income":"Income",
+    "addTransaction":"Add Transaction",
+    "search":"Search"
+  }

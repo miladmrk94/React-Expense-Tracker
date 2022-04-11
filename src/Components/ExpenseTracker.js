@@ -6,8 +6,9 @@ import {
   HiArrowNarrowUp,
   HiArrowNarrowDown,
 } from "react-icons/hi";
+import { withTranslation } from "react-i18next";
 
-const ExpenseTracker = () => {
+const ExpenseTracker = ({ t }) => {
   //--------------- show and hidden form
   const [isShow, setIsShow] = useState(false);
   const clickHandler = () => {
@@ -61,9 +62,11 @@ const ExpenseTracker = () => {
   return (
     <div className={styles.container}>
       <div className={styles.balanceBox}>
-        <h3>TOTAL BALANCE</h3>
+        <h3>{t("totalBalance")}</h3>
         <div className={styles.total}>
-          <h2>$ {income - expense}</h2>
+          <h2>
+            {t("$")} {income - expense}
+          </h2>
           <h3 onClick={clickHandler}>
             <HiPlusCircle size="2.5rem" />
           </h3>
@@ -74,20 +77,20 @@ const ExpenseTracker = () => {
           <form onSubmit={submitHandler}>
             <input
               className={styles.input}
-              placeholder="Amount..."
+              placeholder={t("amount")}
               type="number"
               name="amount"
               onChange={changeHandler}
             />
             <input
               className={styles.input}
-              placeholder="Detail..."
+              placeholder={t("detail")}
               type="text"
               name="detail"
               onChange={changeHandler}
             />
             <div>
-              <label>Expense</label>
+              <label>{t("expense")}</label>
               <input
                 type="radio"
                 value="expense"
@@ -95,7 +98,7 @@ const ExpenseTracker = () => {
                 onChange={changeHandler}
                 checked={formValue.type === "expense"}
               />
-              <label>Income</label>
+              <label>{t("income")}</label>
               <input
                 type="radio"
                 value="income"
@@ -105,7 +108,7 @@ const ExpenseTracker = () => {
               />
             </div>
 
-            <button type="submit">Add Transaction</button>
+            <button type="submit">{t("addTransaction")}</button>
           </form>
         </div>
       ) : (
@@ -113,14 +116,14 @@ const ExpenseTracker = () => {
           <div className={styles.incomeBox}>
             <HiArrowNarrowUp size="2.5rem" color="#11C231" />
             <div className={styles.income}>
-              <h3>Income</h3>
+              <h3>{t("income")}</h3>
               <h4>{income}</h4>
             </div>
           </div>
           <div className={styles.expenseBox}>
             <HiArrowNarrowDown size="2.5rem" color="#EB4C4C" />
             <div className={styles.expense}>
-              <h3>Expense</h3>
+              <h3>{t("expense")}</h3>
               <h4>{expense}</h4>
             </div>
           </div>
@@ -130,4 +133,4 @@ const ExpenseTracker = () => {
   );
 };
 
-export default ExpenseTracker;
+export default withTranslation()(ExpenseTracker);

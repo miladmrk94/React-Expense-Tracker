@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./FilterComponent.module.scss";
-const FilterComponent = ({ changeHandler }) => {
+import { withTranslation } from "react-i18next";
+
+const FilterComponent = ({ changeHandler, t, i18n }) => {
   return (
     <div className={styles.filterBox}>
-      <label>Search: </label>
+      <label>{t("search")}: </label>
       <input type="text" onChange={changeHandler} />
     </div>
   );
 };
 
-export default FilterComponent;
+export default withTranslation()(FilterComponent);
