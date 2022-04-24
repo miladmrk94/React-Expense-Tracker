@@ -7,14 +7,36 @@ import { withTranslation } from "react-i18next";
 
 function App({ t, i18n }) {
   const changeLanguageHandler = (e) => {
-    i18n.changeLanguage(e.target.value);
+    const checked = e.target.checked;
+    checked ? i18n.changeLanguage("fa") : i18n.changeLanguage("en");
   };
   return (
     <div className="App">
-      <select onChange={changeLanguageHandler}>
+      <div className="toggle-box">
+        <div className="button r" id="button-9">
+          <input
+            type="checkbox"
+            className="checkbox"
+            onChange={changeLanguageHandler}
+          />
+          <div className="knobs">
+            <span></span>
+          </div>
+          <div className="layer"></div>
+        </div>
+      </div>
+
+      {/* <Toggle
+        className="DarkToggle"
+        checked={false}
+        onChange={changeLanguageHandler}
+        icons={{ checked: "🌙", unchecked: "🔆" }}
+      /> */}
+
+      {/* <select onChange={changeLanguageHandler}>
         <option value="en">English</option>
         <option value="fa">فارسی</option>
-      </select>
+      </select> */}
       <h3>{t("name")}</h3>
       <ProviderComponent>
         <ExpenseTracker />
