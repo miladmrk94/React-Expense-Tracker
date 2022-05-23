@@ -1,5 +1,5 @@
 
-# React Shop
+# React-Expense-Tracker
 
 [miladmrk94.github.io/React-Expense-Tracker](https://miladmrk94.github.io/React-Expense-Tracker/)
 
